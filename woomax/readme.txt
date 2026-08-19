@@ -4,7 +4,7 @@ Tags: woocommerce, e-commerce, custom-background, custom-colors, custom-header, 
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,12 @@ Yes! Go to Appearance → Customize → Couleurs & Typographie → Couleur princ
 Yes! A .pot file is included in the languages/ directory.
 
 == Changelog ==
+
+= 1.2.1 =
+* Correction d'une erreur critique (fatale) sur les pages boutique et fiche produit : appel à une fonction inexistante `woomax_get_option()` dans le gabarit du fil d'Ariane, remplacé par `get_theme_mod( 'woomax_show_breadcrumbs' )`.
+* Correction de l'affichage des icônes : le thème enregistrait Font Awesome sous le handle « font-awesome », déjà utilisé par Elementor pour sa version 4.x. WordPress ignorait alors la version 6 du thème et les icônes (fa-solid, fa-truck-fast…) ne s'affichaient plus. Font Awesome 6 est désormais chargé sous un handle dédié « woomax-fontawesome ».
+* Les badges de réassurance et le bloc d'information de la fiche produit s'affichent désormais avec leurs valeurs par défaut, sans configuration préalable dans le Customizer.
+* Import de démo Elementor entièrement revu : importe désormais 3 pages en allemand (Startseite, Über uns, Kontakt) prêtes pour une boutique de bois de chauffage, crée automatiquement le menu de navigation principal (Startseite, Shop, Über uns, Kontakt) et définit la page d'accueil. Icônes des widgets Elementor adaptées à la nomenclature compatible (FA5/FA6) pour un rendu correct dans l'éditeur.
 
 = 1.2.0 =
 * Icônes vectorielles à la place des emojis : les badges de réassurance de la fiche produit acceptent désormais des classes Font Awesome (ex. « fa-solid fa-truck-fast ») ou un nom d'icône court, avec repli automatique sur l'emoji si besoin. L'interface d'administration (installateur de plugins, statuts, titres de sections) utilise les icônes Dashicons de WordPress.

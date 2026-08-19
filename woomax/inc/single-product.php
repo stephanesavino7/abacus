@@ -150,7 +150,8 @@ function woomax_single_product_trust_badges() {
         return;
     }
 
-    $raw   = (string) get_theme_mod( 'woomax_sp_trust_text', '' );
+    $default_trust = "fa-solid fa-lock|Paiement 100% sécurisé\nfa-solid fa-truck-fast|Livraison offerte dès 50€\nfa-solid fa-rotate-left|Retours gratuits sous 30 jours";
+    $raw   = (string) get_theme_mod( 'woomax_sp_trust_text', $default_trust );
     $lines = array_filter( array_map( 'trim', preg_split( '/\r\n|\r|\n/', $raw ) ) );
     if ( empty( $lines ) ) {
         return;
@@ -180,8 +181,8 @@ function woomax_single_product_trust_badges() {
  * Affiche le bloc d'information additionnel (livraison, garantie…).
  */
 function woomax_single_product_extra_info() {
-    $title = (string) get_theme_mod( 'woomax_sp_extra_title', '' );
-    $text  = (string) get_theme_mod( 'woomax_sp_extra_text', '' );
+    $title = (string) get_theme_mod( 'woomax_sp_extra_title', __( 'Livraison & garantie', 'woomax' ) );
+    $text  = (string) get_theme_mod( 'woomax_sp_extra_text', __( "Expédition sous 24-48h. Garantie satisfait ou remboursé pendant 30 jours. Service client disponible 7j/7.", 'woomax' ) );
 
     if ( '' === trim( $text ) ) {
         return;

@@ -9,7 +9,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
-define( 'WOOMAX_VERSION',   '1.2.0' );
+define( 'WOOMAX_VERSION',   '1.2.1' );
 define( 'WOOMAX_DIR',       get_template_directory() );
 define( 'WOOMAX_URI',       get_template_directory_uri() );
 define( 'WOOMAX_ASSETS',    WOOMAX_URI . '/assets' );
@@ -86,8 +86,10 @@ function woomax_scripts() {
         [], null
     );
 
-    // Icons
-    wp_enqueue_style( 'font-awesome',
+    // Icons — handle unique « woomax-fontawesome » pour éviter tout conflit avec
+    // la version Font Awesome 4.x embarquée par Elementor (handle « font-awesome »),
+    // qui empêcherait le chargement des icônes v6 (fa-solid, fa-truck-fast, etc.).
+    wp_enqueue_style( 'woomax-fontawesome',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
         [], '6.5.0'
     );

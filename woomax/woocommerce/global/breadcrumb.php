@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! woomax_get_option( 'show_breadcrumbs', true ) ) {
+if ( ! get_theme_mod( 'woomax_show_breadcrumbs', true ) ) {
     return;
 }
 ?>

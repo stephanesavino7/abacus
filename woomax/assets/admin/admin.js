@@ -129,35 +129,43 @@
             next();
         } );
 
-        // ── Import de la page d'accueil Elementor ────────────────────────────
-        $( document ).on( 'click', '.woomax-import-home', function ( e ) {
+        // ── Import de la démo Elementor (pages allemandes) ───────────────────
+        $( document ).on( 'click', '.woomax-import-demo', function ( e ) {
             e.preventDefault();
             var $btn    = $( this );
             var $card   = $btn.closest( '.woomax-plugin-card' );
             var $notice = $card.find( '.woomax-notice-inline' );
-            var setFront = $card.find( '#woomax-set-front' ).is( ':checked' ) ? 'true' : 'false';
+            var setFront  = $card.find( '#woomax-set-front' ).is( ':checked' ) ? 'true' : 'false';
+            var buildMenu = $card.find( '#woomax-build-menu' ).is( ':checked' ) ? 'true' : 'false';
 
             $btn.addClass( 'is-busy' ).prop( 'disabled', true );
             $notice.removeClass( 'is-success is-error' ).hide().empty();
 
             $.post( cfg.ajaxUrl, {
-                action:    'woomax_import_home',
-                nonce:     cfg.nonce,
-                set_front: setFront
+                action:     'woomax_import_demo',
+                nonce:      cfg.nonce,
+                set_front:  setFront,
+                build_menu: buildMenu
             } )
             .done( function ( response ) {
                 if ( response && response.success ) {
                     var d     = response.data || {};
-                    var links = '';
-                    if ( d.edit_link ) {
-                        links += ' <a href="' + d.edit_link + '">' + ( i18n.editElementor || 'Modifier dans Elementor' ) + '</a>';
+                    var html  = '<span class="dashicons dashicons-yes-alt"></span> ' + ( d.message || ( i18n.imported || 'Importé.' ) );
+                    if ( d.pages && d.pages.length ) {
+                        html += '<ul style="margin:8px 0 0;padding-left:20px;">';
+                        d.pages.forEach( function ( p ) {
+                            html += '<li><strong>' + p.title + '</strong> — ';
+                            if ( p.edit_link ) {
+                                html += '<a href="' + p.edit_link + '">' + ( i18n.editElementor || 'Modifier' ) + '</a>';
+                            }
+                            if ( p.view_link ) {
+                                html += ' &nbsp;·&nbsp; <a href="' + p.view_link + '" target="_blank">' + ( i18n.viewPage || 'Voir' ) + '</a>';
+                            }
+                            html += '</li>';
+                        } );
+                        html += '</ul>';
                     }
-                    if ( d.view_link ) {
-                        links += ' &nbsp;·&nbsp; <a href="' + d.view_link + '" target="_blank">' + ( i18n.viewPage || 'Voir la page' ) + '</a>';
-                    }
-                    $notice.addClass( 'is-success' )
-                        .html( '<span class="dashicons dashicons-yes-alt"></span> ' + ( ( d.message ) || ( i18n.imported || 'Importé.' ) ) + links )
-                        .show();
+                    $notice.addClass( 'is-success' ).html( html ).show();
                     $btn.removeClass( 'is-busy' ).prop( 'disabled', false );
                 } else {
                     var msg = ( response && response.data && response.data.message ) ? response.data.message : ( i18n.error || 'Erreur' );
