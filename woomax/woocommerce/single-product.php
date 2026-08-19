@@ -28,7 +28,7 @@ get_header( 'shop' );
         }
     ?>
 
-    <article id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
         <div class="single-product-inner container">
 
@@ -52,7 +52,7 @@ get_header( 'shop' );
 
         </div>
 
-        <div class="container">
+        <div class="woomax-single-secondary">
             <?php
             /**
              * Hook: woocommerce_after_single_product_summary
@@ -62,7 +62,7 @@ get_header( 'shop' );
             ?>
         </div>
 
-    </article>
+    </div>
 
     <?php
         /**

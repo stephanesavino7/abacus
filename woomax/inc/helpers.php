@@ -180,3 +180,33 @@ function woomax_product_badges( $product ) {
     }
     echo '</div>';
 }
+
+
+
+/**
+ * Rendu d'une icône (Font Awesome) à partir d'un jeton.
+ *
+ * Accepte :
+ *  - une classe Font Awesome complète : « fa-solid fa-lock » ;
+ *  - un nom court : « lock » (transformé en « fa-solid fa-lock ») ;
+ *  - un emoji ou tout autre texte : renvoyé tel quel (échappé).
+ *
+ * @param string $icon Jeton d'icône.
+ * @return string HTML sûr de l'icône.
+ */
+function woomax_render_icon( $icon ) {
+    $icon = trim( (string) $icon );
+    if ( '' === $icon ) {
+        return '';
+    }
+    // Classe Font Awesome complète (ex. « fa-solid fa-lock »).
+    if ( false !== strpos( $icon, 'fa-' ) ) {
+        return '<i class="' . esc_attr( $icon ) . '" aria-hidden="true"></i>';
+    }
+    // Nom court alphanumérique (ex. « lock ») → icône solide FA.
+    if ( preg_match( '/^[a-z0-9-]+$/i', $icon ) ) {
+        return '<i class="fa-solid fa-' . esc_attr( $icon ) . '" aria-hidden="true"></i>';
+    }
+    // Emoji ou texte : renvoyé tel quel.
+    return '<span class="woomax-icon-emoji">' . esc_html( $icon ) . '</span>';
+}

@@ -168,7 +168,7 @@ function woomax_single_product_trust_badges() {
         }
         echo '<li class="woomax-trust-badge">';
         if ( '' !== $icon ) {
-            echo '<span class="woomax-trust-badge__icon">' . esc_html( $icon ) . '</span>';
+            echo '<span class="woomax-trust-badge__icon">' . woomax_render_icon( $icon ) . '</span>';
         }
         echo '<span class="woomax-trust-badge__text">' . esc_html( $text ) . '</span>';
         echo '</li>';

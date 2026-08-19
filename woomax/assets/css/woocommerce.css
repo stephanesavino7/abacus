@@ -130,6 +130,20 @@
 }
 
 /* ── Single Product ────────────────────────────────────────────────────────── */
+/* Layout galerie | résumé (les deux enfants flex de .single-product-inner) */
+.single-product .single-product-inner {
+    align-items: flex-start;
+}
+.single-product .single-product-inner .woocommerce-product-gallery {
+    flex: 0 0 48%;
+    max-width: 48%;
+    margin: 0;
+}
+.single-product .single-product-inner .summary.entry-summary {
+    flex: 1 1 52%;
+    max-width: 52%;
+    margin: 0;
+}
 .single-product .woocommerce-product-gallery__wrapper img {
     border-radius: var(--woomax-border-radius-lg);
     object-fit: cover;
@@ -229,6 +243,56 @@
 .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
     color: var(--woomax-primary);
     border-bottom-color: var(--woomax-primary);
+}
+.woocommerce div.product .woocommerce-tabs .panel {
+    margin: 0;
+    padding: 0;
+}
+.woocommerce div.product .woocommerce-tabs .panel h2:first-child {
+    font-family: var(--woomax-heading-font);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+/* ── Zone secondaire : onglets + upsells + produits associés (pleine largeur) ── */
+.woomax-single-secondary {
+    max-width: var(--container-width, 1280px);
+    margin: 0 auto;
+    padding: var(--spacing-2xl, 4rem) var(--spacing-lg, 2rem);
+}
+.woomax-single-secondary > .woocommerce-tabs {
+    margin-bottom: 64px;
+}
+.woomax-single-secondary .related.products,
+.woomax-single-secondary .upsells.products {
+    clear: both;
+    margin-top: 48px;
+    width: 100%;
+    float: none;
+}
+.woomax-single-secondary .related.products > h2,
+.woomax-single-secondary .upsells.products > h2 {
+    font-family: var(--woomax-heading-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 32px;
+}
+/* Grille des produits associés/upsells alignée sur la boutique */
+.woomax-single-secondary .related.products ul.products,
+.woomax-single-secondary .upsells.products ul.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl, 2rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.woomax-single-secondary .related.products ul.products li.product,
+.woomax-single-secondary .upsells.products ul.products li.product {
+    width: 100%;
+    margin: 0;
+    float: none;
 }
 
 /* Reviews */
@@ -495,14 +559,35 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .woomax-single-secondary .related.products ul.products,
+    .woomax-single-secondary .upsells.products ul.products { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 768px) {
     .woocommerce ul.products.columns-3,
     .woocommerce ul.products.columns-4,
     .woocommerce ul.products.columns-5 { grid-template-columns: repeat(2, 1fr); }
     .woocommerce ul.products.columns-2 { grid-template-columns: 1fr; }
+
+    /* Galerie et résumé empilés sur mobile */
+    .single-product .single-product-inner .woocommerce-product-gallery,
+    .single-product .single-product-inner .summary.entry-summary {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .woomax-single-secondary .related.products ul.products,
+    .woomax-single-secondary .upsells.products ul.products { grid-template-columns: repeat(2, 1fr); }
+    /* Onglets défilables horizontalement */
+    .woocommerce div.product .woocommerce-tabs ul.tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+    .woocommerce div.product .woocommerce-tabs ul.tabs li a { white-space: nowrap; }
 }
 @media (max-width: 480px) {
     .woocommerce ul.products { grid-template-columns: 1fr !important; }
+    .woomax-single-secondary .related.products ul.products,
+    .woomax-single-secondary .upsells.products ul.products { grid-template-columns: 1fr; }
 }
 
 
@@ -529,16 +614,22 @@
 }
 
 .woomax-trust-badge__icon {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1;
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: var(--woomax-bg-alt, #f6f6f6);
     border-radius: 50%;
     flex-shrink: 0;
+}
+
+.woomax-trust-badge__icon i {
+    color: var(--woomax-primary, #4f46e5);
+    font-size: 18px;
+    line-height: 1;
 }
 
 .woomax-trust-badge__text {

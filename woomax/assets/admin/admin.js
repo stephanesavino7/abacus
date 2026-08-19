@@ -43,13 +43,13 @@
             .addClass( 'woomax-plugin-status--' + status );
 
         if ( 'active' === status ) {
-            $status.text( '✓ ' + ( i18n.active || 'Actif' ) );
+            $status.html( '<span class="dashicons dashicons-yes-alt"></span> ' + ( i18n.active || 'Actif' ) );
             $footer.find( '.woomax-plugin-action' ).remove();
             if ( ! $footer.find( 'button[disabled]' ).length ) {
                 $footer.append( '<button class="button" disabled>' + ( i18n.active || 'Actif' ) + '</button>' );
             }
         } else if ( 'inactive' === status ) {
-            $status.text( i18n.installed || 'Installé' );
+            $status.html( '<span class="dashicons dashicons-warning"></span> ' + ( i18n.installed || 'Installé' ) );
             $footer.find( '.woomax-plugin-action' )
                 .attr( 'data-action', 'activate' )
                 .removeClass( 'is-busy' )
@@ -127,6 +127,52 @@
                 } );
             }
             next();
+        } );
+
+        // ── Import de la page d'accueil Elementor ────────────────────────────
+        $( document ).on( 'click', '.woomax-import-home', function ( e ) {
+            e.preventDefault();
+            var $btn    = $( this );
+            var $card   = $btn.closest( '.woomax-plugin-card' );
+            var $notice = $card.find( '.woomax-notice-inline' );
+            var setFront = $card.find( '#woomax-set-front' ).is( ':checked' ) ? 'true' : 'false';
+
+            $btn.addClass( 'is-busy' ).prop( 'disabled', true );
+            $notice.removeClass( 'is-success is-error' ).hide().empty();
+
+            $.post( cfg.ajaxUrl, {
+                action:    'woomax_import_home',
+                nonce:     cfg.nonce,
+                set_front: setFront
+            } )
+            .done( function ( response ) {
+                if ( response && response.success ) {
+                    var d     = response.data || {};
+                    var links = '';
+                    if ( d.edit_link ) {
+                        links += ' <a href="' + d.edit_link + '">' + ( i18n.editElementor || 'Modifier dans Elementor' ) + '</a>';
+                    }
+                    if ( d.view_link ) {
+                        links += ' &nbsp;·&nbsp; <a href="' + d.view_link + '" target="_blank">' + ( i18n.viewPage || 'Voir la page' ) + '</a>';
+                    }
+                    $notice.addClass( 'is-success' )
+                        .html( '<span class="dashicons dashicons-yes-alt"></span> ' + ( ( d.message ) || ( i18n.imported || 'Importé.' ) ) + links )
+                        .show();
+                    $btn.removeClass( 'is-busy' ).prop( 'disabled', false );
+                } else {
+                    var msg = ( response && response.data && response.data.message ) ? response.data.message : ( i18n.error || 'Erreur' );
+                    $notice.addClass( 'is-error' )
+                        .html( '<span class="dashicons dashicons-warning"></span> ' + msg )
+                        .show();
+                    $btn.removeClass( 'is-busy' ).prop( 'disabled', false );
+                }
+            } )
+            .fail( function () {
+                $notice.addClass( 'is-error' )
+                    .html( '<span class="dashicons dashicons-warning"></span> ' + ( i18n.error || 'Erreur' ) )
+                    .show();
+                $btn.removeClass( 'is-busy' ).prop( 'disabled', false );
+            } );
         } );
     } );
 

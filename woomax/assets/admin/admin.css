@@ -110,6 +110,16 @@
     margin: 28px 0 14px;
     padding-bottom: 8px;
     border-bottom: 1px solid #e2e4e7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.woomax-admin__group-title .dashicons {
+    color: #4f46e5;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 /* ─── Grille de plugins ───────────────────────────────────────────────── */
@@ -208,6 +218,15 @@
 .woomax-plugin-status {
     font-size: 12px;
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.woomax-plugin-status .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
 }
 
 .woomax-plugin-status--active {
@@ -227,4 +246,40 @@
 .woomax-install-all.is-busy {
     opacity: .7;
     pointer-events: none;
+}
+
+
+
+/* ─── Notice d'import inline (Modèles Elementor) ──────────────────────── */
+.woomax-notice-inline {
+    display: none;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.woomax-notice-inline .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+    margin-right: 2px;
+}
+
+.woomax-notice-inline.is-success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+}
+
+.woomax-notice-inline.is-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+}
+
+.woomax-notice-inline a {
+    font-weight: 600;
 }

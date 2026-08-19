@@ -190,6 +190,9 @@ class WooMax_Admin {
                 'install'    => __( 'Installer', 'woomax' ),
                 'error'      => __( 'Erreur — réessayez.', 'woomax' ),
                 'done'       => __( 'Terminé !', 'woomax' ),
+                'imported'      => __( 'Page d\'accueil importée.', 'woomax' ),
+                'editElementor' => __( 'Modifier dans Elementor', 'woomax' ),
+                'viewPage'      => __( 'Voir la page', 'woomax' ),
             ],
         ] );
     }
@@ -377,9 +380,9 @@ class WooMax_Admin {
     public static function render_plugins_page() {
         $plugins = self::get_plugins();
         $groups  = [
-            'core'         => __( '🔧 Plugins requis', 'woomax' ),
-            'woo-elementor'=> __( '🧩 Extensions Elementor pour WooCommerce', 'woomax' ),
-            'utility'      => __( '⚡ Utilitaires recommandés', 'woomax' ),
+            'core'          => [ 'icon' => 'dashicons-admin-tools',    'label' => __( 'Plugins requis', 'woomax' ) ],
+            'woo-elementor' => [ 'icon' => 'dashicons-screenoptions',  'label' => __( 'Extensions Elementor pour WooCommerce', 'woomax' ) ],
+            'utility'       => [ 'icon' => 'dashicons-superhero-alt',  'label' => __( 'Utilitaires recommandés', 'woomax' ) ],
         ];
         ?>
         <div class="wrap woomax-admin">
@@ -392,8 +395,8 @@ class WooMax_Admin {
                 </button>
             </div>
 
-            <?php foreach ( $groups as $cat => $label ) : ?>
-                <h2 class="woomax-admin__group-title"><?php echo esc_html( $label ); ?></h2>
+            <?php foreach ( $groups as $cat => $group ) : ?>
+                <h2 class="woomax-admin__group-title"><span class="dashicons <?php echo esc_attr( $group['icon'] ); ?>"></span> <?php echo esc_html( $group['label'] ); ?></h2>
                 <div class="woomax-plugin-grid">
                     <?php foreach ( $plugins as $slug => $p ) : ?>
                         <?php if ( $p['category'] !== $cat ) continue; ?>
@@ -413,9 +416,13 @@ class WooMax_Admin {
                             <div class="woomax-plugin-card__footer">
                                 <span class="woomax-plugin-status woomax-plugin-status--<?php echo esc_attr( $status ); ?>">
                                     <?php
-                                    if ( 'active' === $status )   esc_html_e( '✓ Actif', 'woomax' );
-                                    elseif ( 'inactive' === $status ) esc_html_e( 'Installé (inactif)', 'woomax' );
-                                    else esc_html_e( 'Non installé', 'woomax' );
+                                    if ( 'active' === $status ) {
+                                        echo '<span class="dashicons dashicons-yes-alt"></span> ' . esc_html__( 'Actif', 'woomax' );
+                                    } elseif ( 'inactive' === $status ) {
+                                        echo '<span class="dashicons dashicons-warning"></span> ' . esc_html__( 'Installé (inactif)', 'woomax' );
+                                    } else {
+                                        echo '<span class="dashicons dashicons-minus"></span> ' . esc_html__( 'Non installé', 'woomax' );
+                                    }
                                     ?>
                                 </span>
                                 <?php if ( 'active' === $status ) : ?>

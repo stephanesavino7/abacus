@@ -459,9 +459,9 @@ function woomax_customize_register( $wp_customize ) {
     $add_checkbox( 'woomax_sp_show_trust', 'Afficher les badges de réassurance', true, 'woomax_section_single_info' );
     $add_textarea( 'woomax_sp_trust_text',
         'Badges de réassurance',
-        "🔒|Paiement 100% sécurisé\n🚚|Livraison offerte dès 50€\n↩️|Retours gratuits sous 30 jours",
+        "fa-solid fa-lock|Paiement 100% sécurisé\nfa-solid fa-truck-fast|Livraison offerte dès 50€\nfa-solid fa-rotate-left|Retours gratuits sous 30 jours",
         'woomax_section_single_info',
-        __( 'Un badge par ligne, au format : icône|texte (l\'icône peut être un emoji).', 'woomax' )
+        __( 'Un badge par ligne, au format : icône|texte. L\'icône accepte une classe Font Awesome (ex. « fa-solid fa-lock »), un nom court (ex. « lock ») ou un emoji.', 'woomax' )
     );
 
     // Bloc d'information additionnel (livraison, garantie…)

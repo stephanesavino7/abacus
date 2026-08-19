@@ -4,7 +4,7 @@ Tags: woocommerce, e-commerce, custom-background, custom-colors, custom-header, 
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,11 @@ Yes! Go to Appearance → Customize → Couleurs & Typographie → Couleur princ
 Yes! A .pot file is included in the languages/ directory.
 
 == Changelog ==
+
+= 1.2.0 =
+* Icônes vectorielles à la place des emojis : les badges de réassurance de la fiche produit acceptent désormais des classes Font Awesome (ex. « fa-solid fa-truck-fast ») ou un nom d'icône court, avec repli automatique sur l'emoji si besoin. L'interface d'administration (installateur de plugins, statuts, titres de sections) utilise les icônes Dashicons de WordPress.
+* Nouveau module « Modèles Elementor » (menu WooMax) : import en un clic d'une page d'accueil pré-conçue et entièrement modifiable dans Elementor (bannière héro, arguments de réassurance, produits populaires, catégories, appel à l'action). Le modèle n'utilise que des widgets du noyau d'Elementor et des shortcodes WooCommerce — aucune extension Pro requise. Option pour définir automatiquement la page comme page d'accueil du site.
+* Correction du style de la fiche produit : mise en page galerie / résumé côte à côte fiabilisée, onglets (description, avis...) désormais correctement stylés, section « produits associés » et bloc bas de page affichés en pleine largeur avec une grille responsive.
 
 = 1.1.0 =
 * Compatibilité Elementor complète : support natif, largeur de contenu synchronisée avec le Customizer, catégorie de widgets « WooMax », et deux gabarits de page (Elementor pleine largeur avec en-tête/pied de page, et Elementor canevas vierge). Prise en charge des emplacements du Theme Builder d'Elementor Pro (en-tête, pied de page, single, archive).
