@@ -504,3 +504,85 @@
 @media (max-width: 480px) {
     .woocommerce ul.products { grid-template-columns: 1fr !important; }
 }
+
+
+
+/* ==========================================================================
+   WooMax — Fiche produit : réassurance & infos additionnelles
+   ========================================================================== */
+.woomax-trust-badges {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 18px 0 0;
+    border-top: 1px solid var(--woomax-border, #eee);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.woomax-trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--woomax-text, #333);
+}
+
+.woomax-trust-badge__icon {
+    font-size: 20px;
+    line-height: 1;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--woomax-bg-alt, #f6f6f6);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.woomax-trust-badge__text {
+    font-weight: 500;
+}
+
+.woomax-single-extra {
+    margin-top: 22px;
+    padding: 18px 20px;
+    background: var(--woomax-bg-alt, #f6f6f6);
+    border-radius: 12px;
+}
+
+.woomax-single-extra__title {
+    margin: 0 0 8px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.woomax-single-extra__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--woomax-text-light, #666);
+}
+
+.woomax-single-extra__text p:last-child {
+    margin-bottom: 0;
+}
+
+.woomax-product-meta {
+    margin-top: 18px;
+    font-size: 13.5px;
+    color: var(--woomax-text-light, #666);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.woomax-product-meta a {
+    color: var(--woomax-primary, #4f46e5);
+    text-decoration: none;
+}
+
+.woomax-product-meta a:hover {
+    text-decoration: underline;
+}

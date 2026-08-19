@@ -433,6 +433,44 @@ function woomax_customize_register( $wp_customize ) {
     $add_range(    'woomax_related_products_count','Nb de produits associés',              4, 'woomax_section_single_prod', 2, 8, 2 );
     $add_checkbox( 'woomax_show_upsells',          'Upsells',                              true, 'woomax_section_single_prod' );
 
+    // Infos affichées sur la fiche produit
+    $add_section( 'woomax_section_single_info', 'ℹ️ Infos fiche produit', 'woomax_panel_shop', 35 );
+
+    $add_checkbox( 'woomax_sp_show_title',      'Afficher le titre',              true,  'woomax_section_single_info' );
+    $add_checkbox( 'woomax_sp_show_rating',     'Afficher la notation (étoiles)', true,  'woomax_section_single_info' );
+    $add_checkbox( 'woomax_sp_show_price',      'Afficher le prix',               true,  'woomax_section_single_info' );
+    $add_checkbox( 'woomax_sp_show_excerpt',    'Afficher la description courte', true,  'woomax_section_single_info' );
+    $add_checkbox( 'woomax_sp_show_add_to_cart','Afficher le formulaire d\'achat', true, 'woomax_section_single_info' );
+    $add_checkbox( 'woomax_sp_show_sku',        'Afficher la référence (SKU)',    true,  'woomax_section_single_info' );
+    $add_checkbox( 'woomax_sp_show_categories', 'Afficher les catégories',        true,  'woomax_section_single_info' );
+    $add_checkbox( 'woomax_sp_show_tags',       'Afficher les étiquettes',        false, 'woomax_section_single_info' );
+    $add_checkbox( 'woomax_sp_show_stock',      'Afficher la disponibilité (stock)', true, 'woomax_section_single_info' );
+    $add_checkbox( 'woomax_sp_show_sharing',    'Afficher les boutons de partage', false, 'woomax_section_single_info' );
+
+    // Ordre des éléments du résumé
+    $add_text( 'woomax_sp_order',
+        'Ordre des éléments',
+        'title,rating,price,excerpt,cart,meta',
+        'woomax_section_single_info',
+        __( 'Liste séparée par des virgules parmi : title, rating, price, excerpt, cart, meta. Réorganisez pour changer l\'ordre.', 'woomax' )
+    );
+
+    // Blocs de réassurance (badges de confiance)
+    $add_checkbox( 'woomax_sp_show_trust', 'Afficher les badges de réassurance', true, 'woomax_section_single_info' );
+    $add_textarea( 'woomax_sp_trust_text',
+        'Badges de réassurance',
+        "🔒|Paiement 100% sécurisé\n🚚|Livraison offerte dès 50€\n↩️|Retours gratuits sous 30 jours",
+        'woomax_section_single_info',
+        __( 'Un badge par ligne, au format : icône|texte (l\'icône peut être un emoji).', 'woomax' )
+    );
+
+    // Bloc d'information additionnel (livraison, garantie…)
+    $add_text(     'woomax_sp_extra_title', 'Titre du bloc d\'info additionnel', __( 'Livraison & garantie', 'woomax' ), 'woomax_section_single_info' );
+    $add_textarea( 'woomax_sp_extra_text',  'Contenu du bloc d\'info additionnel',
+        __( "Expédition sous 24-48h. Garantie satisfait ou remboursé pendant 30 jours. Service client disponible 7j/7.", 'woomax' ),
+        'woomax_section_single_info'
+    );
+
     // ════════════════════════════════════════════════════════════════════════
     // 7. PIED DE PAGE
     // ════════════════════════════════════════════════════════════════════════

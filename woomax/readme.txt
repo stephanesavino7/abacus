@@ -4,7 +4,7 @@ Tags: woocommerce, e-commerce, custom-background, custom-colors, custom-header, 
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,12 @@ Yes! Go to Appearance → Customize → Couleurs & Typographie → Couleur princ
 Yes! A .pot file is included in the languages/ directory.
 
 == Changelog ==
+
+= 1.1.0 =
+* Compatibilité Elementor complète : support natif, largeur de contenu synchronisée avec le Customizer, catégorie de widgets « WooMax », et deux gabarits de page (Elementor pleine largeur avec en-tête/pied de page, et Elementor canevas vierge). Prise en charge des emplacements du Theme Builder d'Elementor Pro (en-tête, pied de page, single, archive).
+* Nouveau menu d'administration dédié « WooMax » avec tableau de bord et installateur de plugins en un clic (installation + activation via AJAX sécurisé, depuis WordPress.org).
+* Installateur proposant WooCommerce et Elementor (requis), des extensions Elementor pour WooCommerce (WooLentor, Essential Addons, Happy Elementor Addons) et des utilitaires recommandés (Contact Form 7, Yoast SEO). Notice d'administration lorsque des plugins requis manquent.
+* Personnalisation avancée de la fiche produit (Customizer ▸ Boutique ▸ Infos fiche produit) : affichage/masquage du titre, de la notation, du prix, de la description, du formulaire d'achat, de la référence (SKU), des catégories, des étiquettes, de la disponibilité et des boutons de partage ; réorganisation de l'ordre des éléments ; badges de réassurance personnalisables et bloc d'information additionnel (livraison, garantie…).
 
 = 1.0.1 =
 * Correction d'erreurs fatales : tous les appels de fonctions WooCommerce (is_woocommerce, wc_get_cart_url, wc_get_checkout_url, get_woocommerce_currency_symbol, woocommerce_mini_cart, woocommerce_breadcrumb, wc_get_product_ids_on_sale, etc.) sont désormais protégés par function_exists() / class_exists('WooCommerce'). Le thème ne plante plus lorsque WooCommerce est inactif.

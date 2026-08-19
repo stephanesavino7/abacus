@@ -9,7 +9,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
-define( 'WOOMAX_VERSION',   '1.0.1' );
+define( 'WOOMAX_VERSION',   '1.1.0' );
 define( 'WOOMAX_DIR',       get_template_directory() );
 define( 'WOOMAX_URI',       get_template_directory_uri() );
 define( 'WOOMAX_ASSETS',    WOOMAX_URI . '/assets' );
@@ -18,8 +18,11 @@ define( 'WOOMAX_ASSETS',    WOOMAX_URI . '/assets' );
 require_once WOOMAX_DIR . '/inc/helpers.php';
 require_once WOOMAX_DIR . '/inc/customizer.php';
 require_once WOOMAX_DIR . '/inc/widgets.php';
+require_once WOOMAX_DIR . '/inc/elementor.php';            // Compatibilité Elementor (indépendant de WooCommerce)
+require_once WOOMAX_DIR . '/inc/admin/plugin-installer.php'; // Menu admin + installateur de plugins
 if ( class_exists( 'WooCommerce' ) ) {
     require_once WOOMAX_DIR . '/inc/woocommerce.php';
+    require_once WOOMAX_DIR . '/inc/single-product.php';   // Personnalisation de la fiche produit
 }
 
 // ─── Theme Setup ──────────────────────────────────────────────────────────────
