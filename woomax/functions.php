@@ -9,7 +9,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
-define( 'WOOMAX_VERSION',   '1.0.0' );
+define( 'WOOMAX_VERSION',   '1.0.1' );
 define( 'WOOMAX_DIR',       get_template_directory() );
 define( 'WOOMAX_URI',       get_template_directory_uri() );
 define( 'WOOMAX_ASSETS',    WOOMAX_URI . '/assets' );
@@ -229,6 +229,9 @@ add_action( 'widgets_init', 'woomax_register_sidebars' );
 // ─── AJAX: Mini-cart fragment ─────────────────────────────────────────────────
 function woomax_mini_cart() {
     check_ajax_referer( 'woomax-nonce', 'nonce' );
+    if ( ! function_exists( 'WC' ) || ! WC()->cart ) {
+        wp_send_json_error( [ 'message' => 'WooCommerce inactif' ] );
+    }
     $count = WC()->cart->get_cart_contents_count();
     $total = WC()->cart->get_cart_total();
     ob_start();
@@ -282,7 +285,7 @@ function woomax_body_classes( $classes ) {
     $header_style = get_theme_mod( 'woomax_header_style', 'default' );
     $classes[] = 'header-style-' . $header_style;
     if ( is_singular() ) $classes[] = 'singular';
-    if ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) {
+    if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) ) {
         $classes[] = 'woocommerce-active';
     }
     return $classes;
@@ -359,7 +362,7 @@ function woomax_breadcrumbs() {
     echo '<nav class="woomax-breadcrumb" aria-label="Fil d\'Ariane">';
     echo '<a href="' . esc_url( home_url() ) . '">' . esc_html( $home ) . '</a>';
     echo $sep;
-    if ( is_woocommerce() ) {
+    if ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
         woocommerce_breadcrumb( [ 'delimiter' => $sep, 'wrap_before' => '', 'wrap_after' => '', 'before' => '', 'after' => '' ] );
     } elseif ( is_single() ) {
         $cats = get_the_category();

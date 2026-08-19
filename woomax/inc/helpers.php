@@ -83,6 +83,9 @@ function woomax_section_title( $subtitle = '', $title = '', $description = '' ) 
  * Récupère les produits WooCommerce par type
  */
 function woomax_get_products( $type = 'featured', $count = 8 ) {
+    if ( ! class_exists( 'WooCommerce' ) ) {
+        return new WP_Query( [ 'post__in' => [ 0 ] ] );
+    }
     $args = [
         'post_type'      => 'product',
         'posts_per_page' => $count,

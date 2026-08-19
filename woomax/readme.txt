@@ -4,7 +4,7 @@ Tags: woocommerce, e-commerce, custom-background, custom-colors, custom-header, 
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ Yes! Go to Appearance → Customize → Couleurs & Typographie → Couleur princ
 Yes! A .pot file is included in the languages/ directory.
 
 == Changelog ==
+
+= 1.0.1 =
+* Correction d'erreurs fatales : tous les appels de fonctions WooCommerce (is_woocommerce, wc_get_cart_url, wc_get_checkout_url, get_woocommerce_currency_symbol, woocommerce_mini_cart, woocommerce_breadcrumb, wc_get_product_ids_on_sale, etc.) sont désormais protégés par function_exists() / class_exists('WooCommerce'). Le thème ne plante plus lorsque WooCommerce est inactif.
 
 = 1.0.0 =
 * Initial release
