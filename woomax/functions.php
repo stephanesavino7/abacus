@@ -101,12 +101,18 @@ function woomax_scripts() {
 
     // Main JS
     wp_enqueue_script( 'woomax-main', WOOMAX_ASSETS . '/js/main.js', ['jquery'], WOOMAX_VERSION, true );
+
+    // WooCommerce-dependent data (only when WooCommerce is active to avoid fatal errors)
+    $woomax_cart_url     = function_exists( 'wc_get_cart_url' )               ? wc_get_cart_url()               : '';
+    $woomax_checkout_url = function_exists( 'wc_get_checkout_url' )           ? wc_get_checkout_url()           : '';
+    $woomax_currency     = function_exists( 'get_woocommerce_currency_symbol' ) ? get_woocommerce_currency_symbol() : '';
+
     wp_localize_script( 'woomax-main', 'WooMaxData', [
         'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
         'nonce'      => wp_create_nonce( 'woomax-nonce' ),
-        'cartUrl'    => wc_get_cart_url(),
-        'checkoutUrl'=> wc_get_checkout_url(),
-        'currency'   => get_woocommerce_currency_symbol(),
+        'cartUrl'    => $woomax_cart_url,
+        'checkoutUrl'=> $woomax_checkout_url,
+        'currency'   => $woomax_currency,
         'strings'    => [
             'addedToCart'   => __( 'Ajouté au panier !', 'woomax' ),
             'addingToCart'  => __( 'Ajout...', 'woomax' ),
