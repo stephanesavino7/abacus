@@ -1,0 +1,295 @@
+# Copyright (C) 2024 WooMax Theme
+# This file is distributed under the GPL v2 or later.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WooMax 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/woomax\n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: WP-CLI 2.8.0\n"
+"X-Domain: woomax\n"
+
+#. Theme Name.
+#: style.css
+msgid "WooMax"
+msgstr ""
+
+#. Theme URI.
+#: style.css
+msgid "https://example.com/woomax"
+msgstr ""
+
+#. Description.
+#: style.css
+msgid "A premium WooCommerce theme inspired by natural and artisanal aesthetics."
+msgstr ""
+
+#. Author.
+#: style.css
+msgid "WooMax"
+msgstr ""
+
+#: 404.php
+msgid "Page introuvable"
+msgstr ""
+
+#: 404.php
+msgid "Oups ! On dirait que vous vous êtes perdu dans la forêt."
+msgstr ""
+
+#: 404.php
+msgid "La page que vous recherchez a peut-être été déplacée, renommée ou n'existe plus. Pas de panique — utilisez la recherche ou retournez à l'accueil."
+msgstr ""
+
+#: 404.php
+msgid "Retour à l'accueil"
+msgstr ""
+
+#: 404.php
+msgid "Voir la boutique"
+msgstr ""
+
+#: 404.php
+msgid "Nos produits populaires"
+msgstr ""
+
+#: archive.php
+#: index.php
+msgid "Lire la suite"
+msgstr ""
+
+#: archive.php
+msgid "Aucun article trouvé pour cette période."
+msgstr ""
+
+#: front-page.php
+msgid "Découvrir nos créations"
+msgstr ""
+
+#: front-page.php
+msgid "Voir toute la collection"
+msgstr ""
+
+#: front-page.php
+msgid "Produits vedettes"
+msgstr ""
+
+#: front-page.php
+msgid "Nouveautés"
+msgstr ""
+
+#: front-page.php
+msgid "Notre savoir-faire"
+msgstr ""
+
+#: front-page.php
+msgid "Témoignages"
+msgstr ""
+
+#: front-page.php
+msgid "Restez informé"
+msgstr ""
+
+#: header.php
+msgid "Menu principal"
+msgstr ""
+
+#: header.php
+msgid "Rechercher des produits"
+msgstr ""
+
+#: header.php
+msgid "Panier"
+msgstr ""
+
+#: header.php
+msgid "Mon compte"
+msgstr ""
+
+#: header.php
+msgid "Ouvrir le menu"
+msgstr ""
+
+#: header.php
+msgid "Fermer le menu"
+msgstr ""
+
+#: footer.php
+msgid "Tous droits réservés."
+msgstr ""
+
+#: footer.php
+msgid "Propulsé par"
+msgstr ""
+
+#: footer.php
+msgid "Mentions légales"
+msgstr ""
+
+#: footer.php
+msgid "Politique de confidentialité"
+msgstr ""
+
+#: footer.php
+msgid "CGV"
+msgstr ""
+
+#: index.php
+msgid "Précédent"
+msgstr ""
+
+#: index.php
+msgid "Suivant"
+msgstr ""
+
+#: index.php
+msgid "Aucun résultat trouvé"
+msgstr ""
+
+#: index.php
+msgid "Désolé, aucun contenu ne correspond à vos critères."
+msgstr ""
+
+#: search.php
+msgid "Résultats pour : %s"
+msgstr ""
+
+#: search.php
+msgid "%s résultat trouvé"
+msgid_plural "%s résultats trouvés"
+msgstr[0] ""
+msgstr[1] ""
+
+#: search.php
+msgid "Voir"
+msgstr ""
+
+#: search.php
+msgid "Aucun résultat"
+msgstr ""
+
+#: search.php
+msgid "Votre recherche ne correspond à aucun contenu. Essayez des termes différents."
+msgstr ""
+
+#: single.php
+msgid "Continuer la lecture de %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: single.php
+msgid "Pages :"
+msgstr ""
+
+#: single.php
+msgid "Tags :"
+msgstr ""
+
+#: single.php
+msgid "Article précédent"
+msgstr ""
+
+#: single.php
+msgid "Article suivant"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "Mon Panier"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "%d article"
+msgid_plural "%d articles"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/cart/cart.php
+msgid "Produit"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "Prix"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "Quantité"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "Sous-total"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "Supprimer %s du panier"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "Code promo"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "Appliquer"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "Mettre à jour le panier"
+msgstr ""
+
+#: woocommerce/cart/cart.php
+msgid "Mettre à jour"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php
+msgid "Fil d'Ariane"
+msgstr ""
+
+#: woocommerce/content-product.php
+msgid "Promo"
+msgstr ""
+
+#: woocommerce/content-product.php
+msgid "Vedette"
+msgstr ""
+
+#: woocommerce/content-product.php
+msgid "Voir le produit"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Identité du thème"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Couleurs & Typographie"
+msgstr ""
+
+#: inc/customizer.php
+msgid "En-tête"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Page d'accueil"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Boutique"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Pied de page"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Réseaux sociaux"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Options avancées"
+msgstr ""

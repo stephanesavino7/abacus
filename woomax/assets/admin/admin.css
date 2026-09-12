@@ -1,0 +1,285 @@
+/* ==========================================================================
+   WooMax — Styles du panneau d'administration
+   ========================================================================== */
+
+.woomax-admin {
+    max-width: 1100px;
+}
+
+/* ─── Hero ────────────────────────────────────────────────────────────── */
+.woomax-admin__hero {
+    position: relative;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: #fff;
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin: 20px 20px 28px 0;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, .25);
+}
+
+.woomax-admin__hero h1 {
+    color: #fff;
+    font-size: 26px;
+    margin: 0 0 6px;
+    padding: 0;
+}
+
+.woomax-admin__hero p {
+    margin: 0;
+    font-size: 15px;
+    opacity: .92;
+    max-width: 720px;
+}
+
+.woomax-admin__version {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    background: rgba(255, 255, 255, .18);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+/* ─── Cartes du tableau de bord ───────────────────────────────────────── */
+.woomax-admin__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+    margin: 0 20px 28px 0;
+}
+
+.woomax-admin__card {
+    background: #fff;
+    border: 1px solid #e2e4e7;
+    border-radius: 12px;
+    padding: 24px 22px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.woomax-admin__card .dashicons {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    color: #4f46e5;
+    margin-bottom: 4px;
+}
+
+.woomax-admin__card h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.woomax-admin__card p {
+    margin: 0 0 6px;
+    color: #646970;
+    font-size: 13px;
+    flex-grow: 1;
+}
+
+.woomax-admin__card .button {
+    margin-top: 6px;
+}
+
+/* ─── Intro & barre d'outils ──────────────────────────────────────────── */
+.woomax-admin__intro {
+    color: #646970;
+    font-size: 14px;
+    max-width: 760px;
+    margin: 6px 0 18px;
+}
+
+.woomax-admin__toolbar {
+    margin: 0 0 22px;
+}
+
+.woomax-install-all {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+}
+
+.woomax-admin__group-title {
+    font-size: 18px;
+    margin: 28px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e4e7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.woomax-admin__group-title .dashicons {
+    color: #4f46e5;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+/* ─── Grille de plugins ───────────────────────────────────────────────── */
+.woomax-plugin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin: 0 20px 10px 0;
+}
+
+.woomax-plugin-card {
+    background: #fff;
+    border: 1px solid #e2e4e7;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+.woomax-plugin-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+    border-color: #c7cbd1;
+}
+
+.woomax-plugin-card__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.woomax-plugin-card__head .dashicons {
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+    background: #f0f0ff;
+    color: #4f46e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.woomax-plugin-card__head h3 {
+    margin: 4px 0 0;
+    font-size: 14.5px;
+    line-height: 1.35;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.woomax-plugin-card__desc {
+    color: #646970;
+    font-size: 12.5px;
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.woomax-plugin-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 2px;
+}
+
+/* ─── Badges ──────────────────────────────────────────────────────────── */
+.woomax-badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    line-height: 1.6;
+}
+
+.woomax-badge--req,
+.woomax-badge--warning {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.woomax-badge--ok {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+/* ─── Statuts ─────────────────────────────────────────────────────────── */
+.woomax-plugin-status {
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.woomax-plugin-status .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.woomax-plugin-status--active {
+    color: #16a34a;
+}
+
+.woomax-plugin-status--inactive {
+    color: #d97706;
+}
+
+.woomax-plugin-status--not_installed {
+    color: #9ca3af;
+}
+
+/* ─── Boutons occupés ─────────────────────────────────────────────────── */
+.woomax-plugin-action.is-busy,
+.woomax-install-all.is-busy {
+    opacity: .7;
+    pointer-events: none;
+}
+
+
+
+/* ─── Notice d'import inline (Modèles Elementor) ──────────────────────── */
+.woomax-notice-inline {
+    display: none;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.woomax-notice-inline .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+    margin-right: 2px;
+}
+
+.woomax-notice-inline.is-success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+}
+
+.woomax-notice-inline.is-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+}
+
+.woomax-notice-inline a {
+    font-weight: 600;
+}

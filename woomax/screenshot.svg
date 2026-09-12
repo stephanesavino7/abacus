@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e25;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a7c59;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f5f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0ebe3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#faf7f3"/>
+
+  <!-- Header -->
+  <rect width="1200" height="72" fill="#fff"/>
+  <rect width="1200" height="1" y="72" fill="#e5e0d8"/>
+  <!-- Logo area -->
+  <rect x="48" y="22" width="28" height="28" rx="4" fill="#5a7a4a"/>
+  <rect x="82" y="26" width="80" height="8" rx="2" fill="#1a1a1a"/>
+  <rect x="82" y="40" width="50" height="5" rx="2" fill="#888"/>
+  <!-- Nav items -->
+  <rect x="380" y="32" width="60" height="8" rx="2" fill="#555"/>
+  <rect x="460" y="32" width="70" height="8" rx="2" fill="#555"/>
+  <rect x="552" y="32" width="80" height="8" rx="2" fill="#555"/>
+  <rect x="654" y="32" width="60" height="8" rx="2" fill="#555"/>
+  <!-- Cart & search icons -->
+  <circle cx="1080" cy="36" r="14" fill="#f0ebe3"/>
+  <rect x="1074" y="30" width="12" height="12" rx="2" fill="none" stroke="#555" stroke-width="2"/>
+  <circle cx="1080" cy="36" r="4" fill="#5a7a4a"/>
+  <circle cx="1120" cy="36" r="14" fill="#f0ebe3"/>
+  <rect x="1113" y="30" width="14" height="12" rx="3" fill="none" stroke="#555" stroke-width="2"/>
+  <line x1="1120" y1="42" x2="1120" y2="46" stroke="#555" stroke-width="2"/>
+  <!-- CTA button -->
+  <rect x="1145" y="22" width="0" height="0" fill="#5a7a4a"/>
+
+  <!-- Hero Section -->
+  <rect x="0" y="72" width="1200" height="400" fill="url(#heroBg)"/>
+  <!-- Hero overlay pattern -->
+  <circle cx="900" cy="220" r="250" fill="rgba(255,255,255,0.04)"/>
+  <circle cx="950" cy="180" r="180" fill="rgba(255,255,255,0.04)"/>
+  <!-- Hero text -->
+  <rect x="80" y="140" width="40" height="4" rx="2" fill="rgba(255,255,255,0.5)"/>
+  <rect x="80" y="162" width="380" height="28" rx="4" fill="rgba(255,255,255,0.95)"/>
+  <rect x="80" y="200" width="320" height="28" rx="4" fill="rgba(255,255,255,0.95)"/>
+  <rect x="80" y="238" width="200" height="28" rx="4" fill="rgba(255,255,255,0.95)"/>
+  <rect x="80" y="290" width="240" height="14" rx="2" fill="rgba(255,255,255,0.7)"/>
+  <rect x="80" y="312" width="200" height="14" rx="2" fill="rgba(255,255,255,0.7)"/>
+  <!-- Hero CTA buttons -->
+  <rect x="80" y="360" width="160" height="48" rx="8" fill="#c4813a"/>
+  <rect x="80" y="360" width="160" height="48" rx="8" fill="rgba(196,129,58,1)"/>
+  <rect x="84" y="364" width="152" height="40" rx="6" fill="#d4914a"/>
+  <rect x="258" y="360" width="160" height="48" rx="8" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+  <!-- Hero image placeholder (right side) -->
+  <rect x="700" y="90" width="460" height="380" rx="12" fill="rgba(255,255,255,0.12)"/>
+  <text x="930" y="285" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="rgba(255,255,255,0.4)">📷</text>
+
+  <!-- Products Section -->
+  <rect x="0" y="492" width="1200" height="408" fill="#faf7f3"/>
+  <!-- Section header -->
+  <rect x="50" y="516" width="50" height="4" rx="2" fill="#5a7a4a"/>
+  <rect x="400" y="516" width="400" height="22" rx="3" fill="#1a1a1a"/>
+  <rect x="420" y="548" width="360" height="10" rx="2" fill="#aaa"/>
+
+  <!-- Product cards -->
+  <!-- Card 1 -->
+  <rect x="50" y="580" width="258" height="280" rx="12" fill="#fff" filter="url(#shadow)"/>
+  <rect x="50" y="580" width="258" height="170" rx="12" fill="url(#cardBg)"/>
+  <rect x="50" y="740" width="258" height="12" rx="6" fill="#f0ebe3"/>
+  <rect x="50" y="724" width="258" height="1" fill="#e5e0d8"/>
+  <circle cx="129" cy="665" r="35" fill="#c4a882" opacity="0.4"/>
+  <rect x="70" y="760" width="120" height="10" rx="2" fill="#333"/>
+  <rect x="70" y="778" width="80" height="8" rx="2" fill="#888"/>
+  <rect x="70" y="796" width="60" height="8" rx="2" fill="#5a7a4a"/>
+  <rect x="170" y="788" width="118" height="32" rx="8" fill="#5a7a4a"/>
+  <rect x="175" y="793" width="108" height="22" rx="6" fill="#6a8a5a"/>
+
+  <!-- Card 2 -->
+  <rect x="328" y="580" width="258" height="280" rx="12" fill="#fff"/>
+  <rect x="328" y="580" width="258" height="170" rx="12" fill="url(#cardBg)"/>
+  <rect x="328" y="724" width="258" height="1" fill="#e5e0d8"/>
+  <circle cx="457" cy="665" r="35" fill="#c4a882" opacity="0.4"/>
+  <rect x="348" y="760" width="120" height="10" rx="2" fill="#333"/>
+  <rect x="348" y="778" width="80" height="8" rx="2" fill="#888"/>
+  <rect x="348" y="796" width="60" height="8" rx="2" fill="#5a7a4a"/>
+  <rect x="448" y="788" width="118" height="32" rx="8" fill="#5a7a4a"/>
+
+  <!-- Card 3 -->
+  <rect x="606" y="580" width="258" height="280" rx="12" fill="#fff"/>
+  <rect x="606" y="580" width="258" height="170" rx="12" fill="url(#cardBg)"/>
+  <rect x="606" y="724" width="258" height="1" fill="#e5e0d8"/>
+  <circle cx="735" cy="665" r="35" fill="#c4a882" opacity="0.4"/>
+  <rect x="626" y="760" width="120" height="10" rx="2" fill="#333"/>
+  <rect x="626" y="778" width="80" height="8" rx="2" fill="#888"/>
+  <rect x="626" y="796" width="60" height="8" rx="2" fill="#5a7a4a"/>
+  <rect x="726" y="788" width="118" height="32" rx="8" fill="#5a7a4a"/>
+
+  <!-- Card 4 -->
+  <rect x="884" y="580" width="266" height="280" rx="12" fill="#fff"/>
+  <rect x="884" y="580" width="266" height="170" rx="12" fill="url(#cardBg)"/>
+  <rect x="884" y="724" width="266" height="1" fill="#e5e0d8"/>
+  <circle cx="1017" cy="665" r="35" fill="#c4a882" opacity="0.4"/>
+  <rect x="904" y="760" width="120" height="10" rx="2" fill="#333"/>
+  <rect x="904" y="778" width="80" height="8" rx="2" fill="#888"/>
+  <rect x="904" y="796" width="60" height="8" rx="2" fill="#5a7a4a"/>
+  <rect x="1000" y="788" width="130" height="32" rx="8" fill="#5a7a4a"/>
+
+  <!-- Footer bar at bottom -->
+  <rect x="0" y="876" width="1200" height="24" fill="#2c3e25"/>
+  <rect x="440" y="883" width="320" height="8" rx="2" fill="rgba(255,255,255,0.3)"/>
+
+  <!-- Theme name watermark -->
+  <text x="1150" y="890" text-anchor="end" font-family="Georgia,serif" font-size="11" fill="rgba(255,255,255,0.5)">WooMax Theme</text>
+</svg>
